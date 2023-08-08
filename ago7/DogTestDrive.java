@@ -3,7 +3,7 @@ package ago7;
 public class DogTestDrive {
     public static void main(String[] args) {
         Dog d = new Dog();
-        
+
         d.size = 40;
 
         d.bark();
@@ -11,7 +11,7 @@ public class DogTestDrive {
         Dog c = d;
         c = null;
 
-        c.bark();
+        c.bark(); // null pointer
 
     }
 }
