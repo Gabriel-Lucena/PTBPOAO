@@ -1,4 +1,4 @@
-class Forma {
+abstract class Forma {
 
   String cor;
 
@@ -6,7 +6,6 @@ class Forma {
     System.out.println("Sua cor é " + cor + ".");
   }
 
-  void calcularArea() {
-  }
+  abstract void calcularArea();
 
 }
