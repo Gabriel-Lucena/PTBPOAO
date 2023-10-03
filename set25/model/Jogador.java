@@ -25,13 +25,24 @@ public class Jogador {
     }
 
     public static void iniciarDuelo(Jogador jogador1, Jogador jogador2) {
-        int ataque = jogador1.atacar();
-        int defesa = jogador2.defender();
+        int[] jogador1Array = new int[2];
+        int[] jogador2Array = new int[2];
 
-        if (ataque >= defesa) {
-            System.out.println("jogador 1 ganhou");
+        jogador1Array[0] = jogador1.atacar();
+        jogador1Array[1] = jogador1.defender();
+
+        jogador2Array[0] = jogador2.atacar();
+        jogador2Array[1] = jogador2.defender();
+
+        while (jogador1Array[1] > 0 || jogador2Array[1] > 0) {
+            jogador2Array[1] -= jogador1Array[0];
+            jogador1Array[1] -= jogador2Array[0];
+        }
+
+        if (jogador1Array[1] > jogador2Array[1]) {
+            System.out.println("O Jogador 1 Ganhou!!!");
         } else {
-            System.out.println("jogador 2 ganhou");
+            System.out.println("O Jogador 2 Ganhou!!!");
         }
     }
 }

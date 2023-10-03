@@ -2,16 +2,16 @@ package model;
 
 public class Cajado {
 
-  protected Pedra[] pedras;
-  protected int poderAtaque;
+  protected Pedra pedra1;
+  protected Pedra pedra2;
+  protected int poderAtaque = 0;
 
   public Cajado(Pedra pedra1, Pedra pedra2) {
-    this.pedras[0] = pedra1;
-    this.pedras[1] = pedra2;
+    this.pedra1 = pedra1;
+    this.poderAtaque = pedra1.getForcaNucleo();
 
-    for (int i = 0; i < pedras.length; i++) {
-      this.poderAtaque += pedras[i].getForcaNucleo();
-    }
+    this.pedra2 = pedra2;
+    this.poderAtaque += pedra2.getForcaNucleo();
   }
 
   public int getPoderAtaque() {
