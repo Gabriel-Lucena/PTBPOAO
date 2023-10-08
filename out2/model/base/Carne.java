@@ -1,12 +1,27 @@
 package model.base;
 
-import model.Jogador;
-
 public abstract class Carne {
 
-  public Carne(Jogador jogador) {
-    jogador.improveForca(5);
+  protected int improveDefesaFisica = 0;
+  protected int improveDefesaMagica = 0;
+  protected int improveForca = 5;
+  protected int improveInteligencia = 0;
+
+  public Carne(String string) {
+    switch (string) {
+      case "frango":
+        this.improveForca += 10;
+
+        break;
+
+      case "peixe":
+        this.improveDefesaFisica += 10;
+
+        break;
+
+      default:
+        break;
+    }
   }
 
-  public abstract void use(Jogador jogador);
 }

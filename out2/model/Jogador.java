@@ -44,7 +44,7 @@ public class Jogador {
         if (defesaMagica < 0) {
             return;
         }
-        this.defesaFisica += defesaMagica;
+        this.defesaMagica += defesaMagica;
     }
 
     public int getDefesaFisica() {
