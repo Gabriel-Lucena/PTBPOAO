@@ -1,6 +1,7 @@
 package model;
 
 import model.especie.SlimeArenoso;
+import model.especie.SlimeVulcanico;
 
 public class SlimeBasico {
 
@@ -29,12 +30,26 @@ public class SlimeBasico {
         return this.defesa;
     }
 
-    public static final void tornarArenoso(SlimeBasico slimeBasico) {
+    public final SlimeArenoso tornarArenoso(int defesaArenoso) {
 
-        String nome = slimeBasico.getNome();
-        int nivelMalemolencia = slimeBasico.getNivelMalemolencia();
-        int defesa = slimeBasico.getDefesa();
+        String nome = this.nome;
+        int nivelMalemolencia = this.nivelMalemolencia;
+        int defesa = this.defesa;
 
-        SlimeArenoso slimeArenoso = new SlimeArenoso(nome, nivelMalemolencia, defesa);
+        SlimeArenoso slimeArenoso = new SlimeArenoso(nome, nivelMalemolencia, defesa, defesaArenoso);
+
+        return slimeArenoso;
     }
+
+    public final SlimeVulcanico tornarVulcanico(int defesaVulcanico) {
+
+        String nome = this.nome;
+        int nivelMalemolencia = this.nivelMalemolencia;
+        int defesa = this.defesa;
+
+        SlimeVulcanico slimeVulcanico = new SlimeVulcanico(nome, nivelMalemolencia, defesa, defesaVulcanico);
+
+        return slimeVulcanico;
+    }
+
 }
