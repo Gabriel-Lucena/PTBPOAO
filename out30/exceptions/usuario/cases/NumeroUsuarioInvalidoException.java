@@ -1,4 +1,7 @@
 package exceptions.usuario.cases;
-public class NumeroUsuarioInvalidoException {
-    
+
+import exceptions.usuario.UsuarioException;
+
+public class NumeroUsuarioInvalidoException extends UsuarioException {
+
 }

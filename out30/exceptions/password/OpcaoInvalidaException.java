@@ -1,5 +1,5 @@
 package exceptions.password;
 
-public class OpcaoInvalidaException {
+public class OpcaoInvalidaException extends Exception {
 
 }

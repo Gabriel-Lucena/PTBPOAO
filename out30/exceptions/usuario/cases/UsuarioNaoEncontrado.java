@@ -1,4 +1,7 @@
 package exceptions.usuario.cases;
-public class UsuarioNaoEncontrado {
-    
+
+import exceptions.usuario.UsuarioException;
+
+public class UsuarioNaoEncontrado extends UsuarioException {
+
 }

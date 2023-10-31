@@ -1,4 +1,7 @@
 package exceptions.usuario.cases;
-public class UsuarioDesativado {
-    
+
+import exceptions.usuario.UsuarioException;
+
+public class UsuarioDesativado extends UsuarioException {
+
 }

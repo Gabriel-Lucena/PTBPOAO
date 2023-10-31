@@ -1,4 +1,5 @@
 package exceptions.usuario;
-public class UsuarioException {
-    
+
+public class UsuarioException extends Exception {
+
 }
