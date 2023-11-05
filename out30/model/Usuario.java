@@ -1,8 +1,8 @@
 package model;
 
 import exceptions.mail.EmailNaoCadastradoException;
-import exceptions.password.OpcaoInvalidaException;
-import exceptions.password.SenhaInvalidaException;
+import exceptions.senha.OpcaoInvalidaException;
+import exceptions.senha.SenhaInvalidaException;
 import exceptions.usuario.cases.NumeroUsuarioInvalidoException;
 import exceptions.usuario.cases.UsuarioNaoEncontrado;
 
@@ -14,6 +14,10 @@ public class Usuario {
     private String email;
     private String senha;
 
+    public Usuario(int id) {
+        this.id = id;
+    }
+
     public Usuario(String nome, int id, boolean status, String email, String senha) {
         this.nome = nome;
         this.id = id;
@@ -22,7 +26,7 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public boolean validarNumeroUsuario(Usuario user) throws NumeroUsuarioInvalidoException {
+    public static boolean validarNumeroUsuario() throws NumeroUsuarioInvalidoException {
 
         if (false) {
             return false;
@@ -32,17 +36,22 @@ public class Usuario {
 
     }
 
-    public Usuario buscarUsuario(Usuario user) throws UsuarioNaoEncontrado {
+    public static Usuario buscarUsuario(int id,
+            boolean newUser)
 
-        if (false) {
-            return user;
+            throws UsuarioNaoEncontrado {
+
+        Usuario usuario = new Usuario(id);
+
+        if (newUser) {
+            return usuario;
         } else {
             throw new UsuarioNaoEncontrado();
         }
 
     }
 
-    public boolean validarSenha() throws SenhaInvalidaException {
+    public static boolean validarSenha() throws SenhaInvalidaException {
 
         if (false) {
             return false;
@@ -52,7 +61,7 @@ public class Usuario {
 
     }
 
-    public String buscarEmail(Usuario user) throws EmailNaoCadastradoException {
+    public static String buscarEmail() throws EmailNaoCadastradoException {
 
         if (false) {
             return "false";
@@ -62,15 +71,17 @@ public class Usuario {
 
     }
 
-    public static boolean validarUsuario(Usuario user, int opcao) {
+    public static void validarUsuario(Usuario user, int opcao)
+            throws NumeroUsuarioInvalidoException, UsuarioNaoEncontrado, SenhaInvalidaException,
+            EmailNaoCadastradoException, OpcaoInvalidaException {
 
         switch (opcao) {
             case 1:
-                validarNumeroUsuario(user);
+                validarNumeroUsuario();
 
                 break;
             case 2:
-                buscarUsuario(user);
+                buscarUsuario(user.id, false);
 
                 break;
             case 3:
@@ -78,14 +89,12 @@ public class Usuario {
 
                 break;
             case 4:
-                buscarEmail(user);
+                buscarEmail();
 
                 break;
             default:
 
                 throw new OpcaoInvalidaException();
-
-                break;
         }
     }
 }
