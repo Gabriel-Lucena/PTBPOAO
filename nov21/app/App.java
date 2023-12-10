@@ -10,6 +10,17 @@ import model.personagem.Rainha;
 import model.personagem.Rei;
 import model.personagem.Troll;
 
+/**
+ * As implementações concretas implementar dife-
+ * O código do main escolhe uma estratégia e pas-
+ * sa para o contexto. O cliente deve estar
+ * ciente das diferenças entre as estratégias
+ * para sua escolha.
+ *
+ * @since 1.0
+ * @see java.awt
+ */
+
 public class App {
   public static void main(String[] args) {
 
